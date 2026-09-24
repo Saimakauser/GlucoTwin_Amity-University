@@ -1,0 +1,101 @@
+patient_id,age,sex,bmi,hba1c,fasting_glucose,systolic_bp,diastolic_bp,cholesterol,diabetes_years,past_diagnosis,medication,genetic_risk
+1,73,Female,23.3,8.2,152.0,150,79,186,1,Type 2 Diabetes,Insulin,Moderate
+2,59,Male,19.0,8.5,138.7,132,70,257,20,Type 2 Diabetes + Hypertension,Metformin,Low
+3,55,Male,25.2,7.5,130.0,162,84,167,15,Type 2 Diabetes,Metformin + GLP-1,High
+4,74,Female,28.3,6.0,111.8,137,92,210,8,Type 2 Diabetes,Insulin,Low
+5,50,Male,30.4,7.2,111.3,121,73,209,15,Type 2 Diabetes + Hypertension + Dyslipidemia,Lifestyle Management,Low
+6,58,Male,29.7,8.8,167.4,146,82,183,9,Type 2 Diabetes + Hypertension,Insulin,High
+7,68,Male,26.8,7.3,174.5,121,93,215,1,Type 2 Diabetes + Dyslipidemia,Metformin + GLP-1,Low
+8,35,Male,33.2,8.2,229.3,121,81,202,13,Type 2 Diabetes + Hypertension,Metformin + GLP-1,Low
+9,66,Female,26.7,8.2,181.9,127,76,187,2,Type 2 Diabetes + Hypertension,Metformin + Insulin,High
+10,40,Female,25.5,8.4,147.4,149,77,193,20,Type 2 Diabetes,Lifestyle Management,High
+11,42,Male,22.1,7.3,136.4,122,83,219,9,Type 2 Diabetes + Hypertension + Dyslipidemia,Insulin,Moderate
+12,46,Female,31.6,8.9,134.0,133,97,155,2,Type 2 Diabetes + Hypertension + Dyslipidemia,Lifestyle Management,Moderate
+13,66,Male,31.8,8.6,164.8,121,99,155,6,Type 2 Diabetes + Dyslipidemia,Metformin + GLP-1,High
+14,43,Female,34.8,7.9,134.6,147,92,171,19,Type 2 Diabetes,Insulin,Moderate
+15,67,Female,29.9,7.6,135.3,121,81,224,16,Type 2 Diabetes + Hypertension,Metformin + Insulin,High
+16,36,Male,28.5,8.7,114.1,115,90,215,1,Type 2 Diabetes,Insulin,Low
+17,72,Female,28.6,7.0,191.6,142,73,227,1,Type 2 Diabetes,Insulin,Low
+18,54,Female,31.2,8.3,165.6,163,82,178,14,Type 2 Diabetes + Hypertension + Dyslipidemia,Lifestyle Management,Moderate
+19,61,Female,32.4,6.3,166.3,140,84,150,4,Type 2 Diabetes,Metformin + GLP-1,High
+20,62,Female,27.0,8.6,133.7,146,95,193,3,Type 2 Diabetes + Hypertension + Dyslipidemia,Metformin + Insulin,Moderate
+21,37,Female,23.1,9.3,123.6,119,93,189,9,Type 2 Diabetes + Hypertension,Metformin + GLP-1,Moderate
+22,60,Male,30.0,6.2,115.4,142,83,180,14,Type 2 Diabetes,Insulin,High
+23,68,Female,34.7,7.1,122.2,128,80,225,10,Type 2 Diabetes + Hypertension,Metformin + GLP-1,Low
+24,39,Male,36.6,9.8,179.1,147,85,220,19,Type 2 Diabetes,Metformin,Moderate
+25,60,Male,34.3,7.1,106.3,129,86,225,7,Type 2 Diabetes,Lifestyle Management,Moderate
+26,46,Female,32.3,7.0,156.1,146,75,202,16,Type 2 Diabetes,Lifestyle Management,Moderate
+27,64,Male,33.7,6.2,134.0,136,99,154,1,Type 2 Diabetes + Hypertension,Lifestyle Management,Moderate
+28,50,Male,32.0,8.4,163.7,162,87,195,11,Type 2 Diabetes + Dyslipidemia,Lifestyle Management,Moderate
+29,74,Female,25.0,6.8,131.4,115,86,189,17,Type 2 Diabetes + Dyslipidemia,Metformin + Insulin,Moderate
+30,60,Female,25.3,8.7,153.9,124,93,215,4,Type 2 Diabetes,Metformin,High
+31,44,Male,30.3,8.5,144.5,136,97,184,5,Type 2 Diabetes + Dyslipidemia,Insulin,Moderate
+32,59,Male,32.5,7.8,162.0,130,88,200,20,Type 2 Diabetes,Metformin + GLP-1,Moderate
+33,39,Male,31.8,10.2,136.4,138,88,263,11,Type 2 Diabetes + Hypertension,Metformin + Insulin,High
+34,51,Male,26.5,9.1,132.4,114,69,207,8,Type 2 Diabetes + Dyslipidemia,Lifestyle Management,Moderate
+35,41,Male,20.9,9.0,140.9,162,99,174,10,Type 2 Diabetes,Metformin + Insulin,Moderate
+36,47,Female,24.9,7.7,176.8,146,89,208,17,Type 2 Diabetes,Metformin,High
+37,40,Female,28.4,7.8,147.4,123,85,222,9,Type 2 Diabetes + Hypertension,Metformin,Moderate
+38,37,Female,28.9,8.0,123.1,131,75,187,4,Type 2 Diabetes,Metformin + Insulin,Moderate
+39,62,Female,22.5,7.0,132.6,134,78,148,13,Type 2 Diabetes,Insulin,Moderate
+40,69,Male,27.0,8.5,164.5,137,72,211,1,Type 2 Diabetes + Hypertension + Dyslipidemia,Metformin,Moderate
+41,45,Male,25.2,9.4,151.5,153,87,188,5,Type 2 Diabetes + Hypertension,Lifestyle Management,High
+42,71,Male,26.3,6.0,110.8,143,95,258,8,Type 2 Diabetes + Hypertension,Metformin + Insulin,Moderate
+43,37,Male,31.1,7.2,155.3,155,58,182,5,Type 2 Diabetes + Dyslipidemia,Lifestyle Management,Moderate
+44,73,Female,28.3,7.9,185.3,154,76,209,2,Type 2 Diabetes + Hypertension,Insulin,Moderate
+45,49,Female,28.3,6.0,169.2,144,97,199,17,Type 2 Diabetes,Insulin,Low
+46,40,Male,23.1,7.1,99.5,148,63,276,16,Type 2 Diabetes + Hypertension,Metformin + GLP-1,Low
+47,74,Female,30.3,7.5,196.4,130,80,188,19,Type 2 Diabetes,Lifestyle Management,Low
+48,56,Male,33.9,10.4,164.7,130,81,176,9,Type 2 Diabetes + Hypertension,Metformin + Insulin,High
+49,64,Male,30.7,7.1,126.6,143,79,162,14,Type 2 Diabetes + Hypertension,Metformin + Insulin,High
+50,36,Male,29.0,6.9,156.8,144,73,146,5,Type 2 Diabetes,Insulin,Low
+51,73,Female,24.6,7.4,150.5,148,95,227,13,Type 2 Diabetes + Hypertension,Metformin + Insulin,Low
+52,68,Male,25.8,9.5,135.3,124,98,159,2,Type 2 Diabetes + Hypertension + Dyslipidemia,Metformin + GLP-1,Moderate
+53,71,Male,26.1,7.5,133.5,125,81,190,9,Type 2 Diabetes,Metformin + GLP-1,Moderate
+54,70,Female,26.6,6.8,130.6,146,90,170,2,Type 2 Diabetes,Metformin + GLP-1,Moderate
+55,39,Female,29.9,6.9,191.2,138,82,209,11,Type 2 Diabetes + Hypertension,Insulin,Moderate
+56,40,Female,35.4,6.0,110.0,138,79,214,5,Type 2 Diabetes + Hypertension,Metformin,High
+57,58,Female,20.8,6.7,149.2,136,89,260,8,Type 2 Diabetes,Metformin + GLP-1,High
+58,64,Male,29.0,7.3,152.2,166,93,193,18,Type 2 Diabetes + Hypertension,Metformin + GLP-1,Moderate
+59,49,Male,28.7,7.6,165.7,101,87,231,19,Type 2 Diabetes,Metformin + GLP-1,Moderate
+60,49,Male,29.9,10.3,149.5,138,80,175,5,Type 2 Diabetes,Metformin + GLP-1,Moderate
+61,56,Female,29.3,8.2,170.9,127,82,170,8,Type 2 Diabetes,Lifestyle Management,Moderate
+62,36,Male,32.8,8.9,104.2,139,74,187,10,Type 2 Diabetes,Metformin + Insulin,High
+63,47,Female,36.8,7.9,147.7,145,89,212,8,Type 2 Diabetes,Metformin + Insulin,High
+64,43,Female,26.2,7.3,134.9,128,80,238,19,Type 2 Diabetes + Dyslipidemia,Lifestyle Management,Moderate
+65,44,Female,29.3,9.3,139.7,120,69,120,17,Type 2 Diabetes + Hypertension + Dyslipidemia,Metformin + GLP-1,Low
+66,58,Male,19.0,7.7,139.2,145,103,244,18,Type 2 Diabetes + Hypertension + Dyslipidemia,Lifestyle Management,Moderate
+67,75,Male,31.7,8.0,111.5,137,74,165,19,Type 2 Diabetes,Metformin + GLP-1,High
+68,64,Male,22.1,9.4,152.6,152,95,169,18,Type 2 Diabetes + Hypertension,Metformin + Insulin,Moderate
+69,64,Female,26.1,8.1,130.8,131,76,237,19,Type 2 Diabetes,Metformin + Insulin,Moderate
+70,62,Female,31.1,9.2,163.0,118,79,222,1,Type 2 Diabetes,Insulin,Low
+71,66,Female,30.2,8.3,136.0,152,74,226,16,Type 2 Diabetes,Metformin + Insulin,Low
+72,57,Male,21.2,9.7,114.0,122,98,143,12,Type 2 Diabetes,Insulin,Moderate
+73,64,Male,20.8,7.2,169.3,134,81,252,19,Type 2 Diabetes + Hypertension,Metformin,Moderate
+74,59,Male,29.8,6.5,118.9,131,87,226,5,Type 2 Diabetes + Hypertension,Metformin + GLP-1,High
+75,70,Male,29.1,6.0,170.7,142,87,239,12,Type 2 Diabetes,Lifestyle Management,Moderate
+76,51,Female,32.8,7.3,98.6,120,86,197,11,Type 2 Diabetes + Dyslipidemia,Metformin + GLP-1,Moderate
+77,73,Female,23.9,10.7,157.3,137,76,229,4,Type 2 Diabetes + Dyslipidemia,Insulin,Low
+78,51,Female,25.7,10.3,113.3,115,101,180,8,Type 2 Diabetes,Metformin + Insulin,Moderate
+79,71,Female,23.4,8.8,100.9,152,71,197,16,Type 2 Diabetes + Dyslipidemia,Metformin + GLP-1,Moderate
+80,57,Male,30.7,8.3,143.2,110,89,212,7,Type 2 Diabetes,Lifestyle Management,Moderate
+81,42,Female,32.7,7.4,178.9,94,98,250,3,Type 2 Diabetes,Insulin,Low
+82,71,Male,32.3,6.8,140.3,128,99,211,13,Type 2 Diabetes,Metformin + Insulin,Moderate
+83,36,Male,28.5,7.8,161.0,132,84,185,16,Type 2 Diabetes + Dyslipidemia,Insulin,High
+84,59,Male,33.5,7.2,134.5,130,71,172,4,Type 2 Diabetes,Metformin + Insulin,Low
+85,35,Male,27.4,8.1,183.8,120,94,197,14,Type 2 Diabetes + Hypertension + Dyslipidemia,Metformin + GLP-1,High
+86,41,Female,26.9,7.1,133.1,143,83,187,9,Type 2 Diabetes + Dyslipidemia,Metformin,High
+87,39,Male,22.8,8.4,207.5,142,68,211,3,Type 2 Diabetes + Hypertension + Dyslipidemia,Metformin + Insulin,Moderate
+88,37,Female,36.0,7.1,90.0,121,83,143,3,Type 2 Diabetes,Metformin,High
+89,49,Female,28.0,8.1,120.9,122,85,182,5,Type 2 Diabetes + Dyslipidemia,Insulin,Low
+90,47,Male,30.9,7.8,191.6,147,96,209,1,Type 2 Diabetes,Metformin + GLP-1,High
+91,75,Male,29.4,8.7,170.2,157,78,221,11,Type 2 Diabetes,Lifestyle Management,High
+92,57,Female,26.1,6.9,127.8,142,89,219,12,Type 2 Diabetes + Hypertension,Metformin + Insulin,Moderate
+93,75,Male,26.4,6.8,135.2,124,84,193,2,Type 2 Diabetes + Hypertension + Dyslipidemia,Insulin,Moderate
+94,63,Female,28.2,8.2,140.3,128,81,211,10,Type 2 Diabetes,Metformin,Low
+95,52,Female,35.2,7.0,102.4,155,96,189,11,Type 2 Diabetes,Metformin + Insulin,Low
+96,68,Male,27.8,9.1,131.4,148,89,225,20,Type 2 Diabetes + Hypertension + Dyslipidemia,Metformin + GLP-1,Moderate
+97,62,Male,27.1,8.5,114.3,159,93,197,15,Type 2 Diabetes,Metformin + Insulin,Low
+98,59,Female,31.1,7.4,157.6,134,87,196,8,Type 2 Diabetes + Dyslipidemia,Metformin + GLP-1,High
+99,37,Male,28.2,8.6,142.8,156,78,268,6,Type 2 Diabetes + Hypertension,Metformin,Low
+100,36,Female,28.6,7.8,142.0,117,75,261,15,Type 2 Diabetes + Dyslipidemia,Metformin + GLP-1,Moderate

@@ -1,0 +1,46 @@
+feature,importance
+fasting_glucose,0.30884287
+hour,0.14218897
+glucose,0.04675804
+hba1c,0.043542385
+glucose_mean_2h,0.042856924
+sleep_stage_level,0.04015939
+sleep_stage_Awake,0.03448068
+medication_Metformin + Insulin,0.019239021
+bmi,0.01787029
+past_diagnosis_Type 2 Diabetes + Hypertension + Dyslipidemia,0.015757969
+glucose_mean_1h,0.01386799
+past_diagnosis_Type 2 Diabetes + Dyslipidemia,0.011565964
+glucose_change_60m,0.011229767
+age,0.011112459
+activity_Low,0.010864213
+genetic_risk_Moderate,0.010541174
+diastolic_bp,0.01026797
+genetic_risk_High,0.0099097015
+systolic_bp,0.009545943
+past_diagnosis_Type 2 Diabetes,0.009374951
+sleep_stage_Deep,0.008935264
+cholesterol,0.00881031
+medication_Insulin,0.0085941795
+medication_Lifestyle Management,0.008245105
+medication_Metformin,0.007989795
+diabetes_years,0.0079209
+steps_2h,0.007892775
+glucose_std_1h,0.007775184
+sleep_stage_REM,0.007761952
+sleep_stage_Light,0.0077038463
+heart_rate,0.007615411
+glucose_change_30m,0.007607243
+steps_1h,0.007592898
+steps,0.007469009
+hrv,0.007418092
+heart_rate_mean_1h,0.007375249
+hrv_mean_1h,0.007342121
+past_diagnosis_Type 2 Diabetes + Hypertension,0.00720972
+activity_Moderate,0.00714729
+glucose_change_15m,0.007122344
+day_of_week,0.0070852083
+activity_level,0.0067705265
+medication_Metformin + GLP-1,0.005590315
+genetic_risk_Low,0.0050484836
+activity_High,0.0
