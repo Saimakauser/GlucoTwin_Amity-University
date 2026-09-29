@@ -406,7 +406,7 @@ The clean-clone test was also performed by cloning the public GitHub repository 
 A 2–5 minute demonstration of the GlucoTwin Digital Twin prototype:
 
 YouTube Demo:
-https://youtu.be/YN3yz5F8esc
+https://youtu.be/pxY6XqOuaw0
 
 The video demonstrates:
 
