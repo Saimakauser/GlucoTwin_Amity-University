@@ -1,124 +1,116 @@
-# GlucoTwin
+GlucoTwin
 
-## A Personalized Digital Twin for 2-Hour Glucose Spike Prediction
+Personalized Digital Twin for 2-Hour Glucose Spike Prediction
 
-**Happiest Health Digital Twin Challenge 2026 — Phase 1 Prototype**
+Research Prototype
 
-### Participant
+GlucoTwin is a research prototype demonstrating the fusion of synthetic historical EHR information with dynamic physiological data to estimate the probability of an upcoming glucose excursion at a 2-hour prediction horizon.
 
-- **Name:** Saima Kauser
-- **University:** Amity University
-- **Participation:** Solo / Individual
-- **Incubator:** N/A
+1. Participant Information
 
----
+Participant: Saima Kauser
+Institution: Amity University
+Participation: Solo / Individual
+Incubator: N/A
 
-# 1. Project Overview
+2. Project Overview
 
-GlucoTwin is a research-oriented Digital Twin prototype designed to demonstrate personalized prediction of an upcoming glucose excursion using a combination of historical Electronic Health Record (EHR) information and dynamic physiological data.
+GlucoTwin is a personalized Digital Twin prototype designed to demonstrate how historical patient information and dynamic physiological signals can be combined to support predictive healthcare analytics.
 
-The system creates a patient-specific digital representation by combining:
+The system creates a computational representation of a patient by combining:
 
-- Demographic information
-- Historical diagnoses
-- Laboratory measurements
-- Medication information
-- Genetic-risk indicators
-- Continuous glucose measurements
-- Heart rate
-- Heart-rate variability (HRV)
-- Step count
-- Sleep stage
-- Activity level
+Historical and static EHR information
+Dynamic wearable / IoT physiological signals
+Temporal and rolling features
+Machine-learning based prediction
+Patient-specific explainability
 
-The prototype predicts the probability that a patient's glucose will reach or exceed **180 mg/dL at the 2-hour prediction horizon**.
+The prototype focuses on predicting whether glucose reaches or exceeds 180 mg/dL at the exact 2-hour prediction horizon.
 
-The goal is to demonstrate how continuously updated physiological information can be combined with historical patient information to create a personalized computational representation of a patient.
+All data used in this prototype is synthetic.
 
-> **Important:** GlucoTwin is a research prototype using synthetic data. It is not a medical device and must not be used for diagnosis, treatment, or clinical decision-making.
+3. Problem Statement
 
----
+Glucose levels can change significantly over time and are influenced by multiple patient-specific factors.
 
-# 2. Problem Statement
+A single glucose measurement does not fully represent a patient's physiological state.
 
-Glucose levels can change significantly depending on a combination of historical health characteristics and current physiological conditions.
+Traditional predictive approaches may consider isolated measurements or limited historical information. A Digital Twin approach can instead combine:
 
-Traditional patient information is often stored as relatively static clinical records, while wearable devices continuously generate dynamic physiological measurements.
+Patient demographics
+Medical history
+Laboratory values
+Medication information
+Genetic-risk indicators
+Current physiological signals
+Recent physiological trends
 
-A key challenge is therefore:
+GlucoTwin demonstrates how these different data sources can be fused into a personalized computational patient state for predictive modeling.
 
-> **How can historical patient information and continuously changing physiological signals be combined to create a personalized model capable of predicting an upcoming glucose excursion?**
+4. Proposed Solution
 
-GlucoTwin addresses this problem by creating a computational Digital Twin that combines static patient context with dynamic physiological state.
+GlucoTwin creates a personalized Digital Twin by combining two major layers of information.
 
----
+Static / Historical EHR
+Demographics
+Past diagnoses
+Laboratory results
+Medication
+Genetic risk
+Dynamic Wearable / IoT Data
+CGM glucose
+Heart rate
+HRV
+Step count
+Sleep stages
+Activity level
 
-# 3. Proposed Solution
+These data sources are combined into a personalized Digital Twin state.
 
-GlucoTwin follows a multi-stage pipeline:
+The resulting state is transformed into model-ready features and passed to an XGBoost classification model.
 
-1. Generate anonymized synthetic EHR data.
-2. Generate simulated dynamic wearable/IoT time-series data.
-3. Fuse EHR and wearable data.
-4. Engineer temporal and physiological features.
-5. Train a machine-learning prediction model.
-6. Generate a patient-specific Digital Twin state.
-7. Predict the probability of a glucose spike at the 2-hour horizon.
-8. Explain the prediction using SHAP.
-9. Present the Digital Twin state and prediction through a Streamlit dashboard.
+The model estimates the probability that glucose reaches ≥180 mg/dL at the exact 2-hour prediction horizon.
 
----
+5. Digital Twin Concept
 
-# 4. Digital Twin Concept
+The GlucoTwin Digital Twin combines two layers.
 
-The GlucoTwin Digital Twin combines two types of information.
-
-## Static / Historical Patient Context
-
-The EHR component contains:
-
-- Age
-- Sex
-- BMI
-- HbA1c
-- Fasting glucose
-- Blood pressure
-- Cholesterol
-- Diabetes duration
-- Previous diagnoses
-- Medication
-- Genetic-risk indicator
-
-## Dynamic Physiological State
-
-The simulated wearable/IoT stream contains:
-
-- Glucose
-- Heart rate
-- HRV
-- Step count
-- Sleep stage
-- Activity level
-- Timestamp
+Historical Patient Context
+Age
+BMI
+HbA1c
+Fasting glucose
+Blood pressure
+Diabetes duration
+Past diagnosis
+Medication
+Genetic risk
+Dynamic Physiological State
+Current glucose
+Heart rate
+HRV
+Steps
+Sleep stage
+Activity level
+Timestamp
 
 The Digital Twin combines these two layers to represent the patient's current computational state.
 
----
-
-# 5. Prediction Target
+6. Prediction Target
 
 The model predicts:
 
-> **Probability that glucose reaches ≥180 mg/dL at the 2-hour prediction horizon.**
+Probability that glucose reaches ≥180 mg/dL at the exact 2-hour prediction horizon.
 
 The wearable data is sampled at 15-minute intervals.
 
-Therefore, the 2-hour future glucose value corresponds to an 8-step temporal shift:
+Therefore, the 2-hour future glucose value corresponds to an 8-step temporal shift.
 
-```text
 2 hours / 15 minutes = 8 time steps
 
-6. Synthetic Dataset
+The target is created by checking whether the glucose value at the exact 2-hour future point reaches or exceeds 180 mg/dL.
+
+7. Synthetic Dataset
 
 The prototype uses fully synthetic data.
 
@@ -130,69 +122,74 @@ Laboratory values
 Medication information
 Genetic-risk indicators
 Synthetic Wearable / IoT Data
-7 days of simulated physiological data
-15-minute sampling interval
-67,200 initial wearable records
+7-day physiological timelines
+15-minute sampling intervals
 Glucose
 Heart rate
 HRV
 Steps
 Sleep stage
+Activity
+
+The synthetic dataset contains no real patient information.
+
+8. Data Fusion
+
+GlucoTwin combines historical EHR information with dynamic physiological data.
+
+The data-fusion process consists of:
+
+EHR → Wearable Data → Feature Engineering → Digital Twin State → AI Prediction
+
+The EHR provides the patient's historical context, while wearable data represents the changing physiological state.
+
+The combined representation is then used as input to the predictive model.
+
+9. Feature Engineering
+
+The prototype generates temporal and rolling features from the physiological data.
+
+Features include:
+
+Current glucose
+Heart rate
+HRV
+Steps
+Sleep stage
 Activity level
-
-After temporal feature construction and removal of rows without a valid 2-hour future target, the training dataset contains approximately 65,700 usable records.
-
-No real patient data or personally identifiable health information is used.
-
-7. Data Fusion and Feature Engineering
-
-The system joins the static EHR information with dynamic wearable measurements using the patient identifier.
-
-Temporal and physiological features include:
-
+Hour
+Day of week
 Glucose change over 15 minutes
 Glucose change over 30 minutes
 Glucose change over 60 minutes
-1-hour rolling glucose mean
-2-hour rolling glucose mean
-1-hour glucose variability
-1-hour step count
-2-hour step count
+1-hour glucose mean
+2-hour glucose mean
+1-hour glucose standard deviation
+1-hour steps
+2-hour steps
 1-hour mean heart rate
 1-hour mean HRV
-Hour of day
-Day of week
-Sleep-stage encoding
-Activity-level encoding
 
-This creates a fused patient state that combines historical context with recent physiological dynamics.
+The final model input contains 45 engineered features.
 
-8. Machine Learning Model
+10. Machine Learning Model
 
-The prototype uses XGBoost for binary classification.
-
-Model Objective
-
-The model estimates the probability that the patient's glucose will reach or exceed 180 mg/dL at the 2-hour prediction horizon.
+GlucoTwin uses XGBoost for binary classification.
 
 Model Configuration
 Algorithm: XGBoost Classifier
-Estimators: 300
-Maximum depth: 6
-Learning rate: 0.05
-Subsample: 0.8
-Column sampling: 0.8
-Objective: Binary Logistic Classification
-Evaluation metric: Log Loss
+Task: Binary classification
+Number of engineered features: 45
+Prediction horizon: 2 hours
+Sampling interval: 15 minutes
 Random state: 42
 
-The model uses the fused EHR and wearable features to generate a personalized prediction.
+The model predicts whether the future glucose value at the defined 2-hour horizon reaches ≥180 mg/dL.
 
-9. Model Evaluation
+11. Model Evaluation
 
-The prototype was evaluated using a stratified 80/20 train-test split.
+The current prototype evaluation produced the following results:
 
-Results
 Metric	Result
 Accuracy	90.59%
 Precision	84.51%
@@ -200,132 +197,93 @@ Recall	80.66%
 F1 Score	82.54%
 ROC-AUC	96.69%
 
-The repository also contains:
+These metrics are based on the synthetic dataset and the current prototype evaluation methodology.
 
-Confusion matrix
-ROC curve
-Feature importance visualization
-Evaluation metrics JSON
 Evaluation Limitation
 
 The current prototype uses a random row-level train-test split.
 
-Because multiple time-series observations from the same simulated patient can occur in both training and testing data, this evaluation may contain patient/time leakage.
+Because multiple physiological observations belong to the same patient and occur over time, this evaluation approach can allow related observations from the same patient to appear in both training and testing data.
 
-Therefore, these results should not be interpreted as clinical validation or real-world performance.
+Therefore, these results should be considered prototype-level evaluation results rather than clinical validation.
 
-A stronger future evaluation would use:
+Future work should use patient-level and time-aware validation.
 
-Patient-level holdout
-Time-based validation
-External validation
-Real-world prospective evaluation
-10. Explainability with SHAP
+12. Explainability with SHAP
 
-GlucoTwin uses SHAP (SHapley Additive exPlanations) to explain individual predictions.
+GlucoTwin uses SHAP TreeExplainer to provide patient-specific explanations.
 
-SHAP identifies which features are contributing toward increasing or decreasing the model's predicted probability.
+SHAP helps show how individual features contributed to a specific prediction.
 
-Examples of influential features include:
+The dashboard displays:
 
-Fasting glucose
-HbA1c
-Current glucose
-Glucose rolling averages
-Hour of day
-HRV
-Sleep-related features
+Top contributing features
+Positive SHAP contributions
+Negative SHAP contributions
+Patient-specific explanation
 
-This provides a more interpretable view of the prediction rather than presenting only a probability.
+A positive SHAP value pushes the prediction toward a higher probability, while a negative SHAP value pushes the prediction toward a lower probability for the specific prediction being explained.
 
-11. Digital Twin Dashboard
+13. Digital Twin Dashboard
 
-The project includes a conceptual doctor-facing Streamlit dashboard.
+The Streamlit dashboard provides a conceptual healthcare-facing interface.
 
-The dashboard provides:
+The dashboard includes:
 
 Patient Digital Twin
-Age
-BMI
-HbA1c
-Fasting glucose
-Blood pressure
-Diabetes duration
-Diagnosis
-Medication
-Genetic-risk indicator
 Current Physiological State
-Current glucose
-Heart rate
-HRV
-Steps
-Sleep stage
-Activity
-Last updated timestamp
-Prediction
-2-hour glucose spike probability
-Prototype risk category
-Binary prediction
-Explainability
-SHAP feature contributions
-Visualization
-Glucose timeline
-Digital Twin dynamics
-Model evaluation
-Confusion matrix
-ROC curve
-Feature importance
-12. Technical Architecture
-             SYNTHETIC EHR DATA
-                     |
-                     |
-                     v
-        +-------------------------+
-        | Historical Patient Data |
-        | Demographics            |
-        | Diagnoses               |
-        | Labs                    |
-        | Medication              |
-        | Genetic Risk            |
-        +------------+------------+
-                     |
-                     |
-                     | Patient ID
-                     |
-                     v
-        +-------------------------+
-        | Dynamic Wearable / IoT  |
-        | CGM / Glucose           |
-        | Heart Rate              |
-        | HRV                     |
-        | Steps                   |
-        | Sleep                   |
-        | Activity                |
-        +------------+------------+
-                     |
-                     v
-             DATA FUSION
-                     |
-                     v
-          FEATURE ENGINEERING
-                     |
-                     v
-             XGBOOST MODEL
-                     |
-             +-------+-------+
-             |               |
-             v               v
-       2-HOUR GLUCOSE     SHAP
-          PREDICTION      EXPLANATION
-             |               |
-             +-------+-------+
-                     |
-                     v
-          DIGITAL TWIN STATE
-                     |
-                     v
-          STREAMLIT DASHBOARD
-13. Technology Stack
+2-Hour Glucose Prediction
+SHAP Explainability
+Glucose Timeline
+Digital Twin Dynamics
+Model Validation
+Confusion Matrix
+Feature Importance
+ROC Curve
+Data Fusion Overview
+Complete Digital Twin State
+Technical Summary
+
+The dashboard is designed as a research and demonstration interface.
+
+14. Architecture
+
+The high-level architecture is:
+
+Synthetic EHR Data
+
+↓
+
+Synthetic Wearable / IoT Data
+
+↓
+
+Data Fusion & Feature Engineering
+
+↓
+
+Personalized Digital Twin
+
+↓
+
+XGBoost Prediction Model
+
+↓
+
+2-Hour Glucose Prediction
+
+↓
+
+SHAP Explainability + Dashboard
+
+The architecture document is available here:
+
+Architecture PDF
+
+Architecture PowerPoint
+
+15. Technology Stack
+
 Programming
 Python
 Data Processing
@@ -347,130 +305,129 @@ Development
 VS Code
 Git
 GitHub
-14. Project Structure
+
+16. Project Structure
+
 GlucoTwin/
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── models/
-│
-├── src/
-│   ├── generate_data.py
-│   ├── build_features.py
-│   ├── train_model.py
-│   ├── evaluate_model.py
-│   ├── digital_twin.py
-│   ├── prediction_engine.py
-│   └── explain_prediction.py
-│
-├── dashboard/
-│   └── app.py
-│
-├── docs/
-│   ├── architecture.pdf
-│   └── architecture.pptx
-│
-├── presentation/
-│   └── GlucoTwin_Pitch_Deck.pptx
-│
-├── README.md
-├── requirements.txt
-├── LICENSE
-└── .gitignore
-15. How to Run
-Step 1 — Clone the repository
-git clone https://github.com/Saimakauser/GlucoTwin_Amity-University.git
-cd GlucoTwin_Amity-University
-Step 2 — Create a virtual environment
-python -m venv .venv
-Step 3 — Activate the environment
-Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-Step 4 — Install dependencies
+
+data/ — synthetic raw and processed datasets
+models/ — trained model and evaluation artifacts
+src/ — data generation, feature engineering, training, prediction and explainability scripts
+dashboard/ — Streamlit dashboard
+docs/ — architecture documentation
+presentation/ — project presentation
+notebooks/ — experimentation and analysis
+README.md — project documentation
+requirements.txt — Python dependencies
+LICENSE — MIT License
+17. How to Run
+
+Clone the repository:
+
+GitHub Repository
+
+Install the required dependencies using:
+
 pip install -r requirements.txt
-Step 5 — Run the dashboard
+
+Run the Streamlit dashboard using:
+
 streamlit run dashboard/app.py
 
-The Streamlit dashboard will open in the browser.
+The dashboard will open locally in the browser.
 
-16. Reproducibility
+18. Reproducibility
 
-The repository contains the synthetic dataset, trained model, feature definitions, evaluation outputs, architecture documents, and presentation required to reproduce and inspect the prototype.
+The repository contains the source code, synthetic datasets, trained model artifacts, dashboard, documentation and required dependencies.
 
-The clean-clone test was also performed by cloning the public GitHub repository into a separate directory, creating a fresh virtual environment, installing the requirements, and launching the Streamlit dashboard successfully.
+The project can be reproduced using the provided requirements file and project structure.
 
-17. Project Demo Video
+The prototype does not require access to real patient data.
 
-A 2–5 minute demonstration of the GlucoTwin Digital Twin prototype:
-
-YouTube Demo:
-https://youtu.be/pxY6XqOuaw0
-
-The video demonstrates:
-
-Digital Twin state
-EHR and wearable data fusion
-2-hour glucose prediction
-SHAP explainability
-Model evaluation
-Conceptual doctor-facing dashboard
-18. Required Submission Documents
-Architecture Diagram
-
-The system architecture diagram is provided in both PDF and PowerPoint formats:
-
-Architecture Diagram – PDF
-Architecture Diagram – PowerPoint
-Project Presentation
-
-The complete project presentation is provided in PowerPoint format:
-
-GlucoTwin Project Presentation – PPTX
 19. Privacy and Data Safety
 
-This project uses synthetic data only.
+GlucoTwin uses synthetic data for demonstration.
 
-No real patient records, personally identifiable information, or confidential healthcare data are included in the repository.
+No real patient records are included in the repository.
 
-The project is intended only as a research and educational prototype.
+The prototype is designed to demonstrate the technical concept without exposing personal healthcare information.
 
 20. Limitations
 
 The current prototype has several limitations:
 
 The dataset is synthetic.
-The wearable signals are simulated rather than collected from real devices.
-The model has not undergone clinical validation.
-The current evaluation uses a random row-level split and may contain patient/time leakage.
-The glucose threshold is a prototype target and should not be interpreted as a clinical decision rule.
-Real-world deployment would require extensive validation, privacy controls, monitoring, and clinical collaboration.
+The physiological signals are simulated.
+The current evaluation uses a random row-level split.
+The model has not been clinically validated.
+The prediction has not been externally validated.
+The dashboard is a conceptual research interface.
+The model should not be used for clinical decision-making.
+
+Future development would require appropriately governed real-world research datasets, patient-level and time-aware validation, external validation, calibration, uncertainty estimation and clinical evaluation.
+
 21. Future Work
 
 Potential future improvements include:
 
-Patient-level and time-based validation
-External validation using appropriate open datasets
-Integration with real CGM and wearable devices
-More advanced temporal models
-Personalized model calibration
-Continuous model monitoring
-Privacy-preserving learning
-Clinical validation
-Integration with healthcare workflows
+Patient-level and time-aware validation
+Larger longitudinal datasets
+Real-world appropriately governed research data
+Additional wearable signals
+Continuous glucose monitoring integration
+Improved uncertainty estimation
+Model calibration
+Longitudinal Digital Twin updates
+External validation
+More advanced personalized temporal models
+Clinical research collaboration
+
+
 22. Research Prototype Disclaimer
 
-GlucoTwin is a research prototype created using synthetic data for the Happiest Health Digital Twin Challenge 2026. It is not a medical device, does not provide medical advice, and must not be used for diagnosis, treatment, or clinical decision-making.
+GlucoTwin is a proof-of-concept Digital Twin developed using synthetic/anonymized data.
 
-23. License
+Model outputs are intended only for research, demonstration and educational purposes.
+
+This prototype is not a medical device and should not be used for clinical diagnosis, treatment or medical decision-making.
+
+23. Project Demo Video
+
+GlucoTwin — Personalized Digital Twin for 2-Hour Glucose Spike Prediction
+
+Watch the GlucoTwin Prototype Demo :- https://youtu.be/pxY6XqOuaw0
+
+The video demonstrates the working prototype, including the Digital Twin dashboard, patient state, dynamic physiological data, 2-hour prediction, SHAP explainability, glucose timeline, model evaluation and technical pipeline.
+
+24. Required Submission Documents
+Project Repository
+
+Public GitHub Repository
+
+Architecture Document
+
+Architecture PDF
+
+Architecture PowerPoint
+
+Project Presentation
+
+GlucoTwin Pitch Deck
+
+Demo Video
+
+GlucoTwin Prototype Demo
+
+25. License
 
 This project is released under the MIT License.
 
 See the LICENSE file for details.
 
-24. Author
+26. Author
 
 Saima Kauser
 Amity University
-Solo / Individual Participant
+
+Project: GlucoTwin
+Challenge: Digital Twin Challenge 2026
